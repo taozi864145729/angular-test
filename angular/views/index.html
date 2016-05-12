@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/index.less" rel="stylesheet/less" type="text/css"/>
+    <script src="/js/hightCharts/js/jquery.min.js"></script>
+    <script src="/js/angular/core/angular.js"></script>
+    <script src="/js/angular/core/angular-route.js"></script>
+    <script src="/route.js"></script>
+    <script src="/main.js"></script>
+    <script src="/dashboard/dashboard.js"></script>
+    <script src="/menu/menu.js"></script>
+    <title>3.8</title>
+</head>
+<body ng-controller="mainController">
+    <div>
+        <ul ng-repeat="menu in menus">
+            <li><a href="{{menu.href}}">{{menu.title}}</a>
+                <ul ng-repeat="submenu in menu.children" ng-if="menu.children">
+                    <li><a href="{{submenu.href}}" ng-bind="submenu.title"></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <ng-view></ng-view>
+    <!--<div ng-repeat="user in userList" >-->
+        <!--<ul  ng-class="{active:[$parent.num=$index]}">-->
+            <!--<li>-->
+                <!--<card-controller></card-controller>-->
+            <!--</li>-->
+            <!--<li>-->
+                <!--<button type="button" ng-click="addTemplate()">增加directive</button>-->
+                <!--<button type="button" ng-click="deleteTemplate()">删除directive</button>-->
+            <!--</li>-->
+        <!--</ul>-->
+        <!--<div><a href="select.html">select</a></div>-->
+    <!--</div>-->
+    <!--<column></column>-->
+    <!--<div id="container">Placeholder for chart</div>-->
+    <!--<div class="user-header" ng-repeat="user in users">-->
+        <!--<h1 ng-click="DespopulatArray('user', $index)">Expand</h1>-->
+    <!--</div>-->
+    <!--<div class="user-content" ng:class="Dexspand('user', $index)">-->
+        <!--<div class="content">-->
+            <!--<div class="user-information">-->
+                <!--<div class="info-header">-->
+                    <!--<h1 ng-click="DespopulatArray('info',$index)">Some Information</h1>-->
+                    <!--&lt;!&ndash;<h1 ng-click="DespopulatArray('info', $index)>Some Information</h1>&ndash;&gt;-->
+                <!--</div>-->
+                <!--<div class="info-contents" ng:class="Dexspand('info', $index)">-->
+                    <!--stuff stuff stuff stuff...-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<a ng-click="doSomething($event)">do something</a>-->
+    <!--<div>-->
+        <!--<input ng-model='collapse' type='checkbox'>Title-->
+        <!--<div ng-show='collapse'>-->
+            <!--do something 01-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<table>-->
+        <!--<tbody ng-repeat='m in members'>-->
+        <!--<tr>-->
+            <!--<td><input type=checkbox ng-model=collapse></td>-->
+            <!--<td>{{m.title}}</td>-->
+        <!--</tr>-->
+        <!--<tr ng-show=collapse>-->
+            <!--<td> </td>-->
+            <!--<td>{{ m.content }}</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+
+    <!--<div>-->
+        <!--<a  ng-click="isCollapsed = !isCollapsed">Toggle collapse</a>-->
+            <!--<div ng-show="isCollapsed">-->
+                <!--<div class="well well-large">Some content01</div>-->
+            <!--</div>-->
+        <!--<div ng-show="isCollapsed">-->
+            <!--<div class="well well-large">Some content00</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<ul>-->
+        <!--<li ng-repeat="module in modules">-->
+            <!--<a href="">{{module}}}</a>-->
+        <!--</li>-->
+    <!--</ul>-->
+
+</body>
+</html>

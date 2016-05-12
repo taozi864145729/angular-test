@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <link href="/css/index.less" rel="stylesheet/less" type="text/css"/>
+    <title></title>
+</head>
+<body ng-controller="selectController" class="select-page">
+    <select ng-options="t as t.type for t in selectList" ng-model="pageSelect.selectPage" ng-init="pageSelect.selectPage=selectList[0]"></select>
+    <div class="box-red">
+        red{{pageSelect.selectPage.numbers[0].day}}
+    </div>
+    <div class="box-yellow">
+        yellow{{pageSelect.selectPage.numbers[0].week}}
+    </div>
+    <div class="box-green">
+        green{{pageSelect.selectPage.numbers[0].month}}
+    </div>
+    <div>{{pageSelect.selectPage.id}}</div>
+    <select ng-options="t.type for t in selectList2" ng-model="pageSelect.select2" ng-init="pageSelect.select2=selectList2[0]">
+    </select>
+    <select ng-options="t.type for t in selectList3" ng-model="pageSelect.select3" ng-init="pageSelect.select3=selectList3[0]">
+    </select>
+</body>
+<script src="/js/angular/core/angular.js"></script>
+<script src="/js/selectController.js"></script>
+<script src="/js/card_controller.directive.js"></script>
+<script src="/css/less.js"></script>
+</html>
